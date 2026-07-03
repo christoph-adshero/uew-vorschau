@@ -31,7 +31,7 @@ p{margin:0 0 16px}
 .brand .mark{width:26px;height:42px;color:var(--navy);flex-shrink:0}
 .wm{font-family:var(--f-disp);line-height:.86;display:inline-block;text-align:left}
 .wm>span{display:block}
-.wm-u{font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:1.14em;text-align:center}
+.wm-u{font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:1.14em;text-align:left}
 .wm-w{font-weight:700;text-transform:uppercase;letter-spacing:.01em;font-size:1em}
 .wm-r{font-weight:300;text-transform:lowercase;letter-spacing:.28em;font-size:.5em;margin-top:.16em}
 .hd nav{display:flex;align-items:center;gap:28px}
