@@ -27,10 +27,13 @@ p{margin:0 0 16px}
 /* header */
 .hd{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--rule)}
 .hd-in{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.brand{display:flex;align-items:center;gap:12px}
-.brand .mark{width:26px;height:42px;color:var(--navy)}
-.brand b{font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:15px;display:block;line-height:1}
-.brand span{font-weight:300;text-transform:lowercase;letter-spacing:.32em;font-size:10px;color:var(--ink-soft)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .mark{width:26px;height:42px;color:var(--navy);flex-shrink:0}
+.wm{font-family:var(--f-disp);line-height:.86;display:inline-block;text-align:left}
+.wm>span{display:block}
+.wm-u{font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:1.14em;text-align:center}
+.wm-w{font-weight:700;text-transform:uppercase;letter-spacing:.01em;font-size:1em}
+.wm-r{font-weight:300;text-transform:lowercase;letter-spacing:.28em;font-size:.5em;margin-top:.16em}
 .hd nav{display:flex;align-items:center;gap:28px}
 .hd nav a{font-family:var(--f-disp);text-transform:uppercase;letter-spacing:.18em;font-size:12px}
 .hd nav a:hover{color:var(--steel)}

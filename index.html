@@ -1048,6 +1048,45 @@ function LogoMark({
   }));
 }
 
+/* ---------- Wortmarke (gestapeltes Logo wie Original: Ünel / Wintersberger / rechtsanwälte) ---------- */
+function Wordmark({
+  base = 15,
+  color = "currentColor"
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--f-display)",
+      color,
+      lineHeight: 0.86,
+      display: "inline-block",
+      textAlign: "left"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      textTransform: "uppercase",
+      fontSize: base * 1.14,
+      letterSpacing: "0.03em",
+      textAlign: "center"
+    }
+  }, "Ünel"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      textTransform: "uppercase",
+      fontSize: base,
+      letterSpacing: "0.01em"
+    }
+  }, "Wintersberger"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 300,
+      textTransform: "lowercase",
+      fontSize: base * 0.5,
+      letterSpacing: "0.28em",
+      marginTop: base * 0.16
+    }
+  }, "rechtsanwälte"));
+}
+
 /* ---------- Nav ---------- */
 function Nav({
   route,
@@ -1097,31 +1136,10 @@ function Nav({
       cursor: "pointer"
     }
   }, /*#__PURE__*/React.createElement(LogoMark, {
-    height: 28
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      lineHeight: 1,
-      textAlign: "left"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: "var(--f-display)",
-      textTransform: "uppercase",
-      letterSpacing: "0.06em",
-      fontSize: 15,
-      fontWeight: 700
-    }
-  }, "Ünel Wintersberger"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: "var(--f-display)",
-      fontWeight: 300,
-      textTransform: "lowercase",
-      letterSpacing: "0.34em",
-      fontSize: 10,
-      opacity: 0.65,
-      marginTop: 4
-    }
-  }, "rechtsanwälte"))), /*#__PURE__*/React.createElement("div", {
+    height: 40
+  }), /*#__PURE__*/React.createElement(Wordmark, {
+    base: 15
+  })), /*#__PURE__*/React.createElement("div", {
     className: "nav-links nav-links-desktop"
   }, items.map(it => /*#__PURE__*/React.createElement("a", {
     key: it.id,
@@ -1248,34 +1266,14 @@ function Footer({
     style: {
       display: "flex",
       alignItems: "center",
-      gap: 14,
+      gap: 16,
       marginBottom: 18
     }
   }, /*#__PURE__*/React.createElement(LogoMark, {
-    height: 32
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      textAlign: "left"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: "var(--f-display)",
-      textTransform: "uppercase",
-      letterSpacing: "0.06em",
-      fontSize: 16,
-      fontWeight: 700
-    }
-  }, "Ünel Wintersberger"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: "var(--f-display)",
-      fontWeight: 300,
-      textTransform: "lowercase",
-      letterSpacing: "0.34em",
-      fontSize: 11,
-      opacity: 0.65,
-      marginTop: 4
-    }
-  }, "rechtsanwälte"))), /*#__PURE__*/React.createElement("p", {
+    height: 46
+  }), /*#__PURE__*/React.createElement(Wordmark, {
+    base: 16
+  })), /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 14,
       lineHeight: 1.6,
@@ -1319,6 +1317,8 @@ function Footer({
   }, "Rechtsanwalt Freyung"), /*#__PURE__*/React.createElement("a", {
     href: "standorte/rechtsanwalt-grafenau/"
   }, "Rechtsanwalt Grafenau"), /*#__PURE__*/React.createElement("a", {
+    href: "standorte/rechtsanwalt-passau/"
+  }, "Rechtsanwalt Passau"), /*#__PURE__*/React.createElement("a", {
     href: "standorte/freyung-grafenau/"
   }, "Freyung-Grafenau"), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1964,30 +1964,14 @@ function SchwerpunktePreview({
     onClick: () => onNavigate("schwerpunkte")
   }, "Alle Schwerpunkte ", /*#__PURE__*/React.createElement("span", {
     className: "arr"
-  }, "→")))), /*#__PURE__*/React.createElement("div", {
-    className: "leistung-grid"
-  }, SCHWERPUNKTE.map((sp, i) => /*#__PURE__*/React.createElement(Reveal, {
-    key: sp.id,
-    delay: i % 3 * 80
-  }, /*#__PURE__*/React.createElement("a", {
-    className: "leistung",
-    href: `leistungen/${sp.id}/`
+  }, "→")))), /*#__PURE__*/React.createElement(Reveal, {
+    delay: 80
   }, /*#__PURE__*/React.createElement("div", {
-    className: "leistung-top"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "leistung-ico"
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: sp.id,
-    size: 26
-  })), /*#__PURE__*/React.createElement("span", {
-    className: "sp-num"
-  }, sp.nr)), /*#__PURE__*/React.createElement("h3", {
-    className: "h-card leistung-title"
-  }, sp.titel), /*#__PURE__*/React.createElement("span", {
-    className: "leistung-more small-caps"
-  }, "Mehr erfahren ", /*#__PURE__*/React.createElement("span", {
-    className: "sp-arr"
-  }, "→"))))))));
+    className: "sp-index"
+  }, SP_INDEX.map(sp => /*#__PURE__*/React.createElement(SchwerpunktRow, {
+    key: sp.slug,
+    sp: sp
+  }))))));
 }
 
 /* ---------- Quote / claim block ---------- */
@@ -2455,7 +2439,9 @@ function SchwerpunktePage({
   }));
 }
 Object.assign(window, {
-  SchwerpunktePage
+  SchwerpunktePage,
+  SP_INDEX,
+  SchwerpunktRow
 });
 </script>
   <script>
